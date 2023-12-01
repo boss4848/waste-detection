@@ -11,7 +11,7 @@ https://colab.research.google.com/drive/1dHv5QUuz2NkkgzeKBoO4DLAhLg9mOrzv?usp=sh
 
 **Clone the Repository:**
 ```bash
-git clone https://github.com/your-username/waste-detection.git
+git clone https://github.com/boss4848/waste-detection.git
 cd waste-detection
 ```
 **Install Dependencies:**
