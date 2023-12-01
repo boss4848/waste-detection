@@ -1,4 +1,4 @@
-# Waste Detection
+# Intelligent waste segregation system
 This project demonstrates waste detection using a YOLOv8 (You Only Look Once) object detection model. It identifies recyclable, non-recyclable, and hazardous waste items in a webcam stream.
 
 Our datasets used to train:

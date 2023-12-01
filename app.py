@@ -11,7 +11,7 @@ st.sidebar.title("Detect Console")
 
 model_path = Path(settings.DETECTION_MODEL)
 
-st.title("Waste Detection")
+st.title("Intelligent waste segregation system")
 st.write("Start detecting objects in the webcam stream by clicking the button below. To stop the detection, click stop button in the top right corner of the webcam stream.")
 
 try:
