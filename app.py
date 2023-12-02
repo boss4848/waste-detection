@@ -21,5 +21,5 @@ except Exception as ex:
     st.error(ex)
 helper.play_webcam(model)
 
-st.sidebar.markdown("This is a demo of the waste detection model. You can use this app to detect waste in images and videos.", unsafe_allow_html=True)
+st.sidebar.markdown("This is a demo of the waste detection model.", unsafe_allow_html=True)
 

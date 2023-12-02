@@ -22,6 +22,9 @@ def classify_waste_type(detected_items):
     
     return recyclable_items, non_recyclable_items, hazardous_items
 
+def remove_dash_from_class_name(class_name):
+    return class_name.replace("_", " ")
+
 def _display_detected_frames(model, st_frame, image):
     image = cv2.resize(image, (720, int(720*(9/16))))
     
@@ -38,30 +41,29 @@ def _display_detected_frames(model, st_frame, image):
     if 'last_detection_time' not in st.session_state:
         st.session_state['last_detection_time'] = 0
 
-    res = model.track(image, conf=0.5, persist=True, tracker='botsort.yaml')
+    res = model.track(image, conf=0.3, persist=True, tracker='botsort.yaml')
     names = model.names
     detected_items = set()
 
     for result in res:
         new_classes = set([names[int(c)] for c in result.boxes.cls])
-        
         if new_classes != st.session_state['unique_classes']:
             st.session_state['unique_classes'] = new_classes
-            st.session_state['recyclable_placeholder'].info("Recyclable items: not detected") 
-            st.session_state['non_recyclable_placeholder'].warning("Non-Recyclable items: not detected")
-            st.session_state['hazardous_placeholder'].error("Hazardous items: not detected")
+            st.session_state['recyclable_placeholder'].markdown('')
+            st.session_state['non_recyclable_placeholder'].markdown('')
+            st.session_state['hazardous_placeholder'].markdown('')
             detected_items.update(st.session_state['unique_classes'])
 
             recyclable_items, non_recyclable_items, hazardous_items = classify_waste_type(detected_items)
 
             if recyclable_items:
-                detected_items_str = "\n- ".join(recyclable_items)
+                detected_items_str = "\n- ".join(remove_dash_from_class_name(item) for item in recyclable_items)
                 st.session_state['recyclable_placeholder'].info(f"Recyclable items:\n- {detected_items_str}")
             if non_recyclable_items:
-                detected_items_str = "\n- ".join(non_recyclable_items)
+                detected_items_str = "\n- ".join(remove_dash_from_class_name(item) for item in non_recyclable_items)
                 st.session_state['non_recyclable_placeholder'].warning(f"Non-Recyclable items:\n- {detected_items_str}")
             if hazardous_items:
-                detected_items_str = "\n- ".join(hazardous_items)
+                detected_items_str = "\n- ".join(remove_dash_from_class_name(item) for item in hazardous_items)
                 st.session_state['hazardous_placeholder'].error(f"Hazardous items:\n- {detected_items_str}")
 
             threading.Thread(target=sleep_and_clear_success).start()
