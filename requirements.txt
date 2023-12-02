@@ -1,8 +1,7 @@
 streamlit==1.26.0
-opencv-python==4.8.1.78
+opencv-python-headless==4.8.1.78
 torch==2.0.1
 torchvision==0.15.2
 ultralytics==8.0.173
 urllib3==1.26.6
-onnx==1.15.0
-libgl1-mesa-glx 
+onnxruntime==1.16.1
