@@ -7,6 +7,10 @@ https://universe.roboflow.com/ai-project-i3wje/waste-detection-vqkjo/model/3
 Colab:
 https://colab.research.google.com/drive/1dHv5QUuz2NkkgzeKBoO4DLAhLg9mOrzv?usp=sharing
 
+Live:
+https://intelligent-waste-segregation-system.streamlit.app
+
+
 ## Setup
 
 **Clone the Repository:**
