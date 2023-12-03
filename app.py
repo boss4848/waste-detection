@@ -13,7 +13,48 @@ model_path = Path(settings.DETECTION_MODEL)
 
 st.title("Intelligent waste segregation system")
 st.write("Start detecting objects in the webcam stream by clicking the button below. To stop the detection, click stop button in the top right corner of the webcam stream.")
+st.markdown(
+"""
+<style>
+    .stRecyclable {
+        background-color: rgba(0, 56, 172, 255);
+        padding: 1rem 0.75rem;
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+    }
+    .stNonRecyclable {
+        background-color: rgba(255, 171, 2, 255);
+        padding: 1rem 0.75rem;
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+        
+    }
+    .stHazardous {
+        background-color: rgba(200, 41, 56, 255);
+        padding: 1rem 0.75rem;
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+    }
 
+</style>
+""",
+unsafe_allow_html=True
+)
+
+# st.sidebar.markdown(
+#     f"<div class='stRecyclable'>Recyclable items:\n\n- plastic bottle</div>",
+#     unsafe_allow_html=True
+# )
+
+# st.sidebar.markdown(
+#     f"<div class='stNonRecyclable'>Non-Recyclable items:\n\n- scrap paper \n- plastic bag</div>",
+#     unsafe_allow_html=True
+# )
+
+# st.sidebar.markdown(
+#     f"<div class='stHazardous'>Hazardous items:\n\n- battery</div>",
+#     unsafe_allow_html=True
+# )
 try:
     model = helper.load_model(model_path)
 except Exception as ex:

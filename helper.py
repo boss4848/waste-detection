@@ -58,13 +58,25 @@ def _display_detected_frames(model, st_frame, image):
 
             if recyclable_items:
                 detected_items_str = "\n- ".join(remove_dash_from_class_name(item) for item in recyclable_items)
-                st.session_state['recyclable_placeholder'].info(f"Recyclable items:\n- {detected_items_str}")
+                # st.session_state['recyclable_placeholder'].info(f"Recyclable items:\n\n- {detected_items_str}")
+                st.session_state['recyclable_placeholder'].markdown(
+                    f"<div class='stRecyclable'>Recyclable items:\n\n- {detected_items_str}</div>",
+                    unsafe_allow_html=True
+                )
             if non_recyclable_items:
                 detected_items_str = "\n- ".join(remove_dash_from_class_name(item) for item in non_recyclable_items)
-                st.session_state['non_recyclable_placeholder'].warning(f"Non-Recyclable items:\n- {detected_items_str}")
+                # st.session_state['non_recyclable_placeholder'].warning(f"Non-Recyclable items:\n\n- {detected_items_str}")
+                st.session_state['non_recyclable_placeholder'].markdown(
+                    f"<div class='stNonRecyclable'>Non-Recyclable items:\n\n- {detected_items_str}</div>",
+                    unsafe_allow_html=True
+                )
             if hazardous_items:
                 detected_items_str = "\n- ".join(remove_dash_from_class_name(item) for item in hazardous_items)
-                st.session_state['hazardous_placeholder'].error(f"Hazardous items:\n- {detected_items_str}")
+                # st.session_state['hazardous_placeholder'].error(f"Hazardous items:\n\n- {detected_items_str}")
+                st.session_state['hazardous_placeholder'].markdown(
+                    f"<div class='stHazardous'>Hazardous items:\n\n- {detected_items_str}</div>",
+                    unsafe_allow_html=True
+                )
 
             threading.Thread(target=sleep_and_clear_success).start()
             st.session_state['last_detection_time'] = time.time()
