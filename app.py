@@ -21,19 +21,24 @@ st.markdown(
         padding: 1rem 0.75rem;
         margin-bottom: 1rem;
         border-radius: 0.5rem;
+        margin-top: 0 !important;
+        font-size:18px !important;
     }
     .stNonRecyclable {
         background-color: rgba(94,128,173,255);
         padding: 1rem 0.75rem;
         margin-bottom: 1rem;
         border-radius: 0.5rem;
-        
+        margin-top: 0 !important;
+        font-size:18px !important;
     }
     .stHazardous {
         background-color: rgba(194,84,85,255);
         padding: 1rem 0.75rem;
         margin-bottom: 1rem;
         border-radius: 0.5rem;
+        margin-top: 0 !important;
+        font-size:18px !important;
     }
 
 </style>

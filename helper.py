@@ -26,7 +26,7 @@ def remove_dash_from_class_name(class_name):
     return class_name.replace("_", " ")
 
 def _display_detected_frames(model, st_frame, image):
-    image = cv2.resize(image, (720, int(720*(9/16))))
+    image = cv2.resize(image, (640, int(640*(9/16))))
     
     if 'unique_classes' not in st.session_state:
         st.session_state['unique_classes'] = set()
@@ -41,7 +41,8 @@ def _display_detected_frames(model, st_frame, image):
     if 'last_detection_time' not in st.session_state:
         st.session_state['last_detection_time'] = 0
 
-    res = model.track(image, conf=0.6, persist=True, tracker='botsort.yaml')
+    # res = model.track(image, conf=0.6, persist=True, tracker='bytetrack.yaml')
+    res = model.predict(image, conf=0.8)
     names = model.names
     detected_items = set()
 
