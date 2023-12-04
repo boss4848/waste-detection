@@ -41,7 +41,7 @@ def _display_detected_frames(model, st_frame, image):
     if 'last_detection_time' not in st.session_state:
         st.session_state['last_detection_time'] = 0
 
-    res = model.track(image, conf=0.3, persist=True, tracker='botsort.yaml')
+    res = model.track(image, conf=0.6, persist=True, tracker='botsort.yaml')
     names = model.names
     detected_items = set()
 

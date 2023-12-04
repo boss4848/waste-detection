@@ -17,20 +17,20 @@ st.markdown(
 """
 <style>
     .stRecyclable {
-        background-color: rgba(0, 56, 172, 255);
+        background-color: rgba(233,192,78,255);
         padding: 1rem 0.75rem;
         margin-bottom: 1rem;
         border-radius: 0.5rem;
     }
     .stNonRecyclable {
-        background-color: rgba(255, 171, 2, 255);
+        background-color: rgba(94,128,173,255);
         padding: 1rem 0.75rem;
         margin-bottom: 1rem;
         border-radius: 0.5rem;
         
     }
     .stHazardous {
-        background-color: rgba(200, 41, 56, 255);
+        background-color: rgba(194,84,85,255);
         padding: 1rem 0.75rem;
         margin-bottom: 1rem;
         border-radius: 0.5rem;
