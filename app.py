@@ -46,20 +46,6 @@ st.markdown(
 unsafe_allow_html=True
 )
 
-# st.sidebar.markdown(
-#     f"<div class='stRecyclable'>Recyclable items:\n\n- plastic bottle</div>",
-#     unsafe_allow_html=True
-# )
-
-# st.sidebar.markdown(
-#     f"<div class='stNonRecyclable'>Non-Recyclable items:\n\n- scrap paper \n- plastic bag</div>",
-#     unsafe_allow_html=True
-# )
-
-# st.sidebar.markdown(
-#     f"<div class='stHazardous'>Hazardous items:\n\n- battery</div>",
-#     unsafe_allow_html=True
-# )
 try:
     model = helper.load_model(model_path)
 except Exception as ex:
