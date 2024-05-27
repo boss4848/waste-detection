@@ -43,7 +43,6 @@ Open your web browser and navigate to the provided URL (usually http://localhost
 
 ## Screenshots
 
-![screenshot1](screenshot1.png)
 ![screenshot2](screenshot2.png)
 
 ## References
